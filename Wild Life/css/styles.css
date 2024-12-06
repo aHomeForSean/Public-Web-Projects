@@ -1,0 +1,296 @@
+/* CSS for most basic styling */
+
+
+/* Sets a baseline for the page, like a skeleton. Not very sepecific so it's easy to overwite when needed */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: "Source Serif 4", serif;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+/* Style for the main page (everything else) much like the styling above */ 
+main { 
+    background-color: #CAF0F8;
+    min-height: 100vh;
+    margin: 0; 
+  }
+
+/* Styles the two types of headers I used, all else will revert to that defined in (html, body) */
+h1 {
+    text-align: center;
+    font-family: "East Sea Dokdo", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 6em;
+}
+h3 {
+    font-family: "Arima", system-ui;
+    font-style: normal;
+}
+
+/* Styling for video + intro section */
+#dolphins-video {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+.background-video {
+    height: 100vh;
+    text-align: center;
+    color: white;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#intro {
+    position: relative;
+    
+}
+#jump-down-block {
+    position: relative;
+    top: 90px;
+    
+    
+}
+img.jump-down {
+    width: 15%;
+}
+
+
+/* Styles the About us section */
+
+#about-section {
+    display: flex;              /* Used a lot so I'll define it once, this sets it as a flex box for easy organizing and flexibility */
+    justify-content: center;    /* centers the items on the y axis */
+    align-items: center;        /* centers the items on the x axis */
+    
+    height: 110vh;
+    padding: 30px 30px 60px;
+
+    background-image: url("../images/background/linus-nylund-UCIZh0-OYPw-unsplash.jpg");
+    background-size: cover;
+    
+    
+    
+}
+#what-we-do {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;     /* Changes flex from a row to colums, x to y */
+
+    padding: 0px 5%;  
+    margin: 0;  
+    height: 100%;               /* 100% of parent which has a defined height */ 
+    width: 100%;
+
+    background-color: #33333325;
+    background-clip: border-box;
+    
+}
+/* Sets up the flex styling for the Species Section */
+#species-section {
+    text-align: center;
+    padding: 5px 0px;
+    border-top: 1px black solid;
+}
+#species-boxes {
+    display: flex;
+    flex-wrap: wrap;                    /* allows items to wrap around based on available space */
+    justify-content: space-evenly;      /* sets pace evenly between items, in this case on the y axis */
+}
+
+/* Sets the div to grow, change background and text colour when hovered */
+#species-boxes div.boxes-1-6:hover {
+    transform:scale(105%);
+    background-color: #0077B6;
+    color: white;
+    transition: 0.5s;
+}
+
+.boxes-1-6 img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Styles for the Picture boxes */
+.boxes-1-6 {
+    width: 30%;                 /* 30% width allows 3 boxes to sit per row with some extra space*/
+    border-radius: 10px;
+    margin-bottom: 69px;
+    padding: 5px 7px;
+}
+
+
+/* Similarly sets up the flex styling for the Gallery Section - I wanted more pictures and bigger pictures so they take up the screen, like a photo gallery would */
+#gallery-section {
+    text-align: center;
+    color: white;
+    background: #03045E;
+    padding: 1% 10% 5%;
+}
+#gallery-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+#gallery-boxes .boxes-1-6 {
+    margin: 1% 0;
+}
+
+
+/* Styling the Donation Section */
+#donation-section {
+    padding: 2rem 1rem 3rem;
+    height: 100vh;
+    
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+/* Styling just the Donation Boxes */
+.donation-boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;    /* sets the items at the very top of the box rather than centered, not very noticible atm but was used to allow the text to appear on hover looking a little nicer */
+    align-items: center;
+
+    padding: 1rem;
+    margin: 1rem;
+
+    width: 25%;
+    height: 25%;
+
+    border: 1px black solid;                                        /* colours the border */
+    box-shadow: 10px 12px 14px rgba(0, 0, 0, 0.44);                 /* as it's name suggest it adds a shadow, dark colour and translucent */
+    border-radius: 15px;                                                /* adds a curve to the box edges */
+}
+.donation-boxes img {
+    width: 50%;
+    height: 50%;
+    border-radius: 100%;            /* rounds the edges completely creating a oval, extents to rectangle later when hovered */
+
+}
+.donation-boxes .p-info {          /* Hides the text until it's hovered later, made it look a wee bit less cluttered */
+    display: none;
+    color: white;
+}
+
+.donation-boxes:hover .p-info {    /* hover shows the text */
+    display: contents;
+    transition: 1s;
+
+}
+.donation-boxes:hover img {            /* hover expands the img over a transiton of 1 second */     
+    border-radius: 0px;
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+}
+
+.donation-boxes:hover {
+    width: 25%;
+    height: 25%;
+
+    background-color: rgba(3, 4, 94, 0.76);
+    color: white;
+    transition: 1s;
+
+}
+
+
+    /* Styling for the Contact Section */
+
+#contact-section {
+    padding: 2rem 8rem 3rem;
+    background-color: #90E0EF;
+    
+    
+}
+
+#input-form label { display: none; }         /* Hides the labels of the form. I had them visible before but it looked bad and I didn't want to delete them entirely so they're hidden */
+
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    height: 50%;
+    padding: 8px;
+}
+
+textarea.inputs, input.inputs, button.inputs {     /* commas allow me to target multiple items as once and apply the same styles to them */
+    display: flex;
+    align-items: center;
+
+    border-radius: 5px;
+    border-width: 1px;
+
+    background-color: whitesmoke;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;             /*  Adds space between the items but not on top or bottom. So it "sits" on the borders */
+    align-items: center;
+    height: 50vh;
+    width: 100%;
+    margin: 40px 0;
+    
+}
+
+#button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75%;
+    width: 77%;
+    padding: 17px;
+    color: #0077B6;
+    background-color: whitesmoke;
+}
+.input-hover:hover {
+    background-color: rgb(228, 226, 226);           /* more hover effect */
+}
+#button:hover {
+    background-color: rgba(3, 4, 94, 0.75);
+    color: whitesmoke;
+    transition: 0.25s;
+}
+
+/* Styles footer again as a flex box, smaller white text, and a darker background */
+footer {
+    background: #03045E;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+    font-size: 0.9em;
+}

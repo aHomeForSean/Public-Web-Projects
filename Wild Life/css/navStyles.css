@@ -1,0 +1,364 @@
+/* CSS for nav bar, night mode, and media queries */
+
+
+
+/* hide the "page-theme" radio buttons */
+input[name="page-theme"] { 
+    display: none;
+}
+
+
+/* style the nav bar */
+nav {
+    width: 100%;
+    background: #03045E;
+    
+    position: fixed;        /* Positions it always at the top and above the video*/
+    top: 0;
+    left: 0;
+    z-index: 1;
+}         
+
+/* Sets a home page logo to be displayed on nav bar with space between */
+#Home-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+ /* Styles the nav bar logo */
+#Logo {
+    height: 100%;
+    width: 25%;
+}
+#Home-logo img {
+    margin: 5px 8px;
+    width: 100%;
+}
+/* Adds a hover effect to the logo, don't ask me why I chose to tilt it... it's still better than my original spin effect  */
+
+#Home-logo a:hover img {
+    transform: rotate(-10deg);
+    transition: 0.1s;
+}
+
+/* hide the base ul styles */
+nav ul {
+    list-style: none;
+    background-color: #03045E;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+ 
+/* style the menu item */
+nav li {
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* first level of the menu */
+nav > ul > li {
+	box-sizing: border-box;    /* everything inclosed in its borders, in other words, the border and padding will be included in the set width and height */
+	display: block;             /* as opposed to inline*/
+	width: 100%;
+	border-top: 1px solid #0077B6;
+}              
+
+/* set the base styles for the hyperlink */              
+nav a {
+    text-decoration: none;             /* no more of the classic anchor decorations */
+    color: #fff;
+    display: block;
+    font-family: "Arima", system-ui;   /* more google fonts! Such a lovely thing!*/
+    font-style: normal;
+}
+
+/* set the hover state with a background color */
+nav ul a:hover {
+    display: block;
+    background-color: #00B4D8;
+    border-radius: 15px;
+}
+/* hide the checkbox for menu access  */
+#mobile-menu-opener { display: none; } 
+
+
+        
+/* style the hamburger */
+nav label {
+	display: inline-block;
+	color: #fff;
+	background: #03045E;
+	font-style: normal;
+	font-size: 1.2em;
+	padding: 10px;
+} 
+/* hides the ul until it's opened with the check box later */
+nav > ul { display: none; }
+
+/* opens ul */
+#mobile-menu-opener:checked ~ * ul {
+    display: block;
+}
+
+ /* Sets the menu opener label to spin when opened and then spin back when closed... not really usefull but I originally did it with and arrow icon that changed but it looked ugly so here we are*/
+#mobile-menu-opener:checked ~ * #menu {
+    transform: rotate(360deg);
+    transition: 1s;
+}
+#mobile-menu-opener:not(:checked) ~ * #menu {
+    transform: rotate(180deg);
+    transition: 1s;
+}
+
+
+/* turn those labels into button looking elements */
+label.theme-label { 
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #90E0EF;
+    padding: 10px 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.night-day {
+    /* Positions it always at the bottom left and above the video*/
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+label.theme-label:hover {
+    background-color: #03045E;
+    color: #fff;
+}
+
+/* style the selected label to indicate which one is active */
+
+
+input#day-or-night:checked ~ main label[for=day-or-night] {
+    font-weight: bold;
+    background-color: #fff;    
+    color: #CAF0F8;
+}
+
+/* night mode colours (currently not changing and idk why)// Ha fixed it! I had accidentally deleted the ID name on the html xD */
+    /* It's really just a bunch of simple colour changes so no need to describe them all. After the ~ * is the item or section I'm targeting when the button is ticked and everything bellow is the changes */
+
+input#day-or-night:checked ~ main {
+    background-color: #03045E;
+}
+input#day-or-night:checked ~ * #section1 {  /* only needed if video fails*/
+    background-color: #14242c50;   
+    transition: 0.5s;
+}
+input#day-or-night:checked ~ * #intro {
+    background-color: #14242c50;
+    color: #03045E;
+    border-radius: 100px;
+    transition: 0.5s;
+}
+input#day-or-night:checked ~ * #jump-down-block svg {
+    fill: #03045E;
+}
+
+
+input#day-or-night:checked ~ * #about-section {
+    color: white;
+
+}
+
+input#day-or-night:checked ~ * #species-section {
+    color: white;
+    border-color: whitesmoke;
+}
+input#day-or-night:checked ~ * #gallery-section {
+    background-color: rgb(2, 3, 67);
+}
+
+input#day-or-night:checked ~ * #donation-section {
+    color: white;
+
+}
+input#day-or-night:checked ~ * .donation-boxes, input#day-or-night:checked ~ * .p-info {
+    background-color: #90E0EF;
+    color: black;
+
+}
+input#day-or-night:checked ~ * #contact-section {
+    background-color: #0077B6;
+    color: white;
+
+ }
+ input#day-or-night:checked ~ * #button {
+    color: #03045E;
+
+ }
+ 
+
+
+    /*  night mod nav hover, needed to be specific as I didn't want to change the hover effect for the logo */
+input#day-or-night:checked ~ main nav ul a:hover {
+    background-color: #0077B6;
+}
+
+
+/* desktop/tablet styles */
+
+
+/* Styles the page after it grows past phone width  */
+
+@media (min-width: 768px) {
+    nav label { display: none; } /* hide the hamburger icon */
+    nav > ul { display: block; } /* make the menu a block element */
+  /* set the style of the main menu items */
+    nav > ul > li {
+        width: 150px;
+        display: inline-block;
+        border-top: 0px solid #333;
+        justify-content: center;
+        }
+    nav {
+        /* Sets nav bar as a flex box for the page logo with space between so they apear on opposite sides */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    /* Styles the Logo area with correct margins when not in phone mode */ 
+    #Home-logo {
+        width:fit-content;
+        margin-left: 40px;
+    }
+    /* Grows the Logo img when not in phone mode */
+    #Logo {
+        height: 100%;
+        width: 50%;
+    }
+}
+
+/* Styles the page before it grows past phone width, I got my orders mixed around when making this hense why there's so many media queries  */
+
+@media (max-width: 768px) {
+    #about-section h1 {font-size: 4em} 
+
+    /* species section */
+    #species-section h1 {font-size: 5em}
+    #species-boxes {
+        flex-direction: column;     /* flips the boxes one by one vertically, I did this one a bunch */
+        flex-wrap: nowrap;          /* no more wrap */
+        align-items: center;
+    }
+    div.boxes-1-6 {
+        width: 95%;
+    }
+    /* Gallery section */
+    #gallery-boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Donation section */
+    section#donation-section {
+        height: fit-content;            /* was running into issues with the items no fitting so this just makes sure the section's height is good when the items stack vertically*/
+    }
+    #donation-section div.container {
+        flex-direction: column;
+        width: 100%;
+    }
+    div.donation-boxes {
+        width: 95%;
+    }
+    /* Reveals the text that is show upon hover on desktop as there is no hover on phone/tablet */
+    div.donation-boxes .p-info {
+        display: inline-block;
+        color: black;
+    }
+
+    /* Contact section */
+    section#contact-section {
+        padding: 1em;
+    }
+
+    div.inputs {
+        width: 100%;
+    }
+    button#button {
+        width: 80%;
+    }
+    /* Footer */
+    footer#footer-section {
+        font-size: 0.5em;
+    }
+}
+
+ /*  Styles the page for Ipad view, so after 768px up until it passes 1024 px in width, again I could have done with with just min-width but I flipped my order wrong, lesson learnt  */
+@media (min-width: 768px) and (max-width: 1024px) {
+    nav > ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 75%;
+    }
+    
+    /* mild change for the about section - the background star fish got in the way of the words so I had to change the text colour and darken the background cover a bit*/
+    div#what-we-do {
+        background-color: #00000054;
+        color: white;
+    }
+    /* species section */
+    div#species-boxes {
+        justify-content: space-between;
+    }
+    div.boxes-1-6 {
+        width: 45%;
+    }
+
+    /* Donation section */
+    /* Reveals the text that is show upon hover on desktop as there is no hover on phone/tablet */
+    div.donation-boxes .p-info {
+        display: inline-block;
+        color: black;
+    }
+
+    /* this sets the parent divs to a columns view but the children as a row */
+    div.container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    div.donation-boxes {
+        flex-direction: row;   /* changes what was in columns to rows (the default)*/
+        width: 95%;
+    }
+    div#donation-reverse {
+        flex-direction: row-reverse;  /* reverses the row direction of the middle div using the ID that was speciffically set in the html  */
+    }
+    
+}
+
+/* Styles the hover result incase you click using a touchcreen, hover isn't a thing but I noticed that clicking on things with hovers was giving some terrible issues */
+@media (hover:none) {
+    div.donation-boxes:hover {
+        width: 95%;
+        height: 100%;   
+    }
+    div#species-boxes div.boxes-1-6:hover {
+        transform:scale(100%);
+        background-color: #0077B6;
+        color: white;
+        transition: 0.5s;
+    }
+    .donation-boxes:hover .p-info {
+        color: white;
+        transition: 1s;
+    }   
+}     
+
+
