@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=East+Sea+Dokdo&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+	
+<!-- Two CSS sheets attached, one for my nav bar, night mode, and media queries, the other for all page styling. I found this easy to swap back and forth rather than scrolling -->
+	<link rel="stylesheet" type="text/css" href="css/navStyles.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<title>Wild Life - The life of Dolphins </title>
+</head>
+<body>
+	<div class ="background" id="background-pic">
+
+			<!-- Night Mode management button changed from radio to buttons checkbox since I only need on/off -->
+		<input type="checkbox" name="page-theme" id="day-or-night">
+		<input type="checkbox" name="mobile-menu-trigger" id="mobile-menu-opener" >
+		<main>
+		<nav>
+			<!-- Adds a logo to the nav bar via an img, which is just the text tilted and underlined using MS paint -->
+			<div id="Home-logo">
+				<a href="#section1" id="Logo"><img src="images/icons/Wild-Life.jpg"></a>
+
+			<!-- Label for the menu opener, placed outside the ul div to allow proper styling later -->
+			<label for="mobile-menu-opener" id="menu-open"><svg id="menu" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></label>
+			
+			</div>
+			<ul>
+				<li><a href="#about-section">About</a></li>
+				<li><a href="#species-section">Species</a></li>
+				<li><a href="#gallery-section">Gallery</a></li>
+				<li><a href="#donation-section">Donations</a></li>
+				<li><a href="#contact-section">Contact</a></li>
+			</ul>
+			</nav>
+		<!-- our theme state "buttons" which are actually just "label" elements. placed in div id=night-day so I can position it fixed bottom left with css  -->
+		<div class="night-day">
+			<label class="theme-label" for="day-or-night"><img src="images/icons/partly_cloudy_night_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg" alt="Night Mode"></label>
+		</div>
+
+		<!-- Beginning the main code, starting with my video background intro section -->
+		<section id="section1">
+			<div class="background-video">
+				<video autoplay muted loop id="dolphins-video">
+					<source src="images/videos/4328539-uhd_3840_2160_25fps.mp4" type="video/mp4">
+				</video>
+				<div id="intro">
+					<div>
+						<h1>The wild life of Dolphins</h1>	
+						<h3>(it may be more wild than you expect)</h3>
+					</div>
+					
+					<!-- A simple "jump down" button as seen on many websites. I originally had text to accompany it but it did not look very pleasing-->
+
+					<div id="jump-down-block">
+						<a href="#about-section"><svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px" fill="white"><path d="M480-200 240-440l56-56 184 183 184-183 56 56-240 240Zm0-240L240-680l56-56 184 183 184-183 56 56-240 240Z"/></svg></a>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+<!-- About Section -->
+		<section id="about-section">
+			<div id="what-we-do">
+				<h1>About Us and What We Do</h1>
+				<p>
+					Dolphins, majestic, fascinating, smart, and more complex than we ever imagined, these are things we all know, but I bet there's lots you don't know
+					and that's what we're here for! Dolphins have lots of interesting facts and lots of questionable facts, the kind I cannot talk about
+					if I want to keep this family friendly. They are a very specific class of whales, as you will see in some of their names, and have lots in common but their are some clear distinctions 
+					between most dolphins and whales, and trust me it's certainly not just their sizing.
+				</p>
+				<p>
+					They are amazing creature, but unfortunately many of them have become endangered due to human involvement and they could use your help, and we could use your money! To get involved and to help them of course! Like all wild life sites really do,
+					never pocketing a single cent, right? So down below you will find a section to donate something back, and we promise it will go a long way!
+				</p>
+			</div>
+		</section>
+
+<!-- Species Section -->
+		<!-- multiple div "boxes" to be styled later using the id's and classes-->
+		<section id="species-section">
+			<h1>Different Species</h1>
+			<div id="species-boxes">
+				<div class="boxes-1-6">
+					<img src="images/Fitted/Hectors.jpg" alt="Hector's Dolphin">
+					<h3>Hector's Dolphin</h3>
+					<p>Hector's Dolphin, is the only cetacean native to New Zealand and was named after Sir James Hector. They are also one of the smallest dolphin species with adults usually averaging only 1.4 m in length.
+						Unfortunately for these little guys along with their sub-species, the Maui's, they live close to shore and have a big problem with getting caught in recreational and commercial gill and trawl nets. This along with other threats have brough their population
+						down to under 7,000 which is still better than the Maui's whose population has dwindled to under 55 remaining.
+					</p>
+				</div>
+				<div class="boxes-1-6">
+					<img src="images/Fitted/Irrawaddy.jpg" alt="Irrawaddy Dolphin">
+					<h3>Irrawaddy Dolphin</h3>
+					<p>These little guys are found in small groups throughout parts of southeast Asia where salt water and freshwater mix and are on the verge of extinction with an estimated population under 100.
+						They are also close relatives of the ocra whale whose population is a lot less threatened. The main cause of the declining population is due to hunting and pollution in the water.
+					</p>
+				</div>
+				<div class="boxes-1-6">
+					<img src="images/Fitted/AmazonRiverDolphin.jpg" alt="Amazon River Dolphin">
+					<h3>Amazon River Dolphin</h3>
+					<p>The amazon river dolphin, also known as the pink river dolphin as their colour shift as they grow to adulthood, are the largest species of river dolphins with adults reaching up to 2.5 m in length.
+						As with all toothed whales, the Amazon River Dolphin have a distinct "mellon" on their head which they use for bio-sonar, at least that's the theorized usage.
+						Unfortunately like many creatures they are endangered due to humans polluting the rivers. Yay, us!</p>
+				</div>
+				<div class="boxes-1-6">
+					<img src="images/Fitted/Orca (2).jpg" alt="Orca (Killer Whale)">
+					<h3>Orca aka. Killer Whale</h3>
+					<p>Orcas, also known as killer whales due to a miss translation, are ferocious and effective hunters. They frequently go after whales hence the name and are even know to keep the great whites out of our water (they really like shark liver).
+						That being said, humans need not fear them too heavily as they rarely attack humans in nature, only in aquariums due to that being a terrible place for them to live. Again, yay us!
+					</p>
+
+				</div>
+				<div class="boxes-1-6">
+					<img src="images/Fitted/Short-FinnedPilotWhale.jpg" alt="Short-Finned Pilot Whale">
+					<h3>Short-Finned Pilot Whale</h3>
+					<p>These short finned mammals are found in populations globally with an estimated total over 700,000, but they are noticing that their populations have been migrating further north due to global warming.
+						They range in size from 3-6 m in length and, like orcas, have a matrilineal social hierarchy and is polygamous, with a common ratio of 8 females per male.
+					</p>
+				</div>
+				<div class="boxes-1-6">
+					<img src="images/Fitted/Bottlenose.jpg" alt="Bottlenose Dolphin">
+					<h3>Bottlenose Dolphin</h3>
+					<p>Ah, the classic, probably what everyone thinks of when they hear the word "dolphin" and for good reason, they are common in aquariums!
+						No, there are lots of reason they are well-known, first off there's lots of them, secondly they are very smart and sociable, and of course they are adorable and very entertaining!
+						 Just don't go looking into what they get up to on their spare time.
+					</p>
+				</div>
+
+			</div>
+
+		</section>
+
+<!-- Gallery Section -->	
+		<!-- One parent div and multiple children to style with. All image are connected to the full size via an anchor -->
+		<section id="gallery-section">
+			<h1>Gallery</h1>
+			<div id="gallery-boxes">
+				<div class="boxes-1-6">
+					<a href="images/gallery/chris-blonk--snBBn-UnbA-unsplash.jpg">
+						<img src="images/gallery/chris-blonk--snBBn-UnbA-unsplash.jpg" alt="Aquarium Dolphins">
+					</a>
+				</div>
+				<div class="boxes-1-6">
+					<a href="images/gallery/damian-patkowski-XvdEQxEjJyo-unsplash.jpg"><img src="images/gallery/damian-patkowski-XvdEQxEjJyo-unsplash.jpg" alt="Bottlenose Dolphin Smile"></a>
+				</div>
+				<div class="boxes-1-6">
+					<a href="images/gallery/flavio-tCyr7tR7udc-unsplash.jpg">
+						<img src="images/gallery/flavio-tCyr7tR7udc-unsplash.jpg" alt="Dolphin Together in Calm Water">
+					</a>
+				</div>
+				<div class="boxes-1-6">
+					<a href="images/gallery/hanson-lu-Jj2qvozub_g-unsplash.jpg">
+						<img src="images/gallery/hanson-lu-Jj2qvozub_g-unsplash.jpg" alt="Splashing Dolphins">
+					</a>
+				</div>
+				<div class="boxes-1-6">
+					<a href="images/gallery/mai-moeslund-2lAWK0AnVog-unsplash.jpg">
+						<img src="images/gallery/mai-moeslund-2lAWK0AnVog-unsplash.jpg" alt="White Bodied Dolphins">
+					</a>
+				</div>
+				<div class="boxes-1-6">
+					<a href="images/gallery/pexels-andre-estevez-1743712-3325908.jpg">
+						<img src="images/gallery/pexels-andre-estevez-1743712-3325908.jpg" alt="Orca Peaking">
+					</a>
+				</div>
+				<div class="boxes-1-6">
+					<a href="images/gallery/pexels-dianne-maddox-2069639-3695720.jpg">
+						<img src="images/gallery/pexels-dianne-maddox-2069639-3695720.jpg" alt="Two Wild Orcas">
+					</a>
+				</div>
+				<div class="boxes-1-6">
+					<a href="images/gallery/pexels-hamid-elbaz-62178-225869.jpg">
+						<img src="images/gallery/pexels-hamid-elbaz-62178-225869.jpg" alt="Two Bottlenose Dolphins Smiling">
+					</a>
+				</div>
+				<div class="boxes-1-6">
+					<a href="images/gallery/pexels-jeremy-bishop-1260133-2922672.jpg">
+						<img src="images/gallery/pexels-jeremy-bishop-1260133-2922672.jpg" alt="Underwater Dolphin View">
+					</a>
+				</div>
+
+			</div>
+		</section>
+
+<!-- Donation Section -->	
+	<!-- One overall parent div with multiple children and then grandchildren divs to style with. This allowed for extra styling when in "ipad mode"-->
+		<section id="donation-section">
+			<h1>Donations</h1>
+			<div class="container">
+				<div class="donation-boxes">
+					<img src="images/Fitted/Irrawaddy.jpg" alt="Irrawaddy Dolphin">
+					<div>	
+						<h3>The Irrawaddy Dolphin</h3>
+						<p>$1-$100</p>
+						<p class="p-info">This goofy looking dolphins may be on the brink of extinction, but that's not the only reason you should want to help them. They have large cultural history and significance
+							 and are just utterly amazing creatures that need your help! Anything you can give will be put to good use! </p>
+					</div>
+				</div>
+				<!-- Extra ID added to this div to reverse it just for Ipads -->
+				<div id="donation-reverse" class="donation-boxes">
+					<img src="images/Fitted/Bottlenose.jpg" alt="Bottlenose Dolphin">
+					<div>
+						<h3>Bottlenose Dolphins</h3>
+						<p>$101-$250</p>
+						<p class="p-info">The Bottlenose Dolphins are very well spread out and have a vast population, so they are the least concern and not endangered at all. That means you can donate to them and we'll go ahead
+						and use it in the best way possible, by putting it into rehabilitation of other dolphins of course, not throwing cool parties, that's for sure!</p>
+					</div>
+				</div>
+				<div class="donation-boxes">
+					<img src="images/Fitted/AmazonRiverDolphin.jpg" alt="Amazon River Dolphins">
+					<div>
+						<h3>Amazon River Dolphins</h3>
+						<p>$251-$1000</p>
+						<p class="p-info">These poor little guys are in a desperate state, almost all river dolphins in fact. Due to the polluting of the waters and human interference they are struggling to survive. Luckily awareness is out there and
+						there are lots of people willing to help... maybe like you? They need the most help so all larger donations will be sent directly to them, hopefully they are good with money!</p>
+						</div>
+				</div>
+			</div>
+		</section>
+
+<!-- Donation Section -->
+	<!-- Simple Section with a div to hold the form and then a few children divs inside the form, again allowing easy styling later with flex. Some excessive id's and classes in this one -->
+		<section id="contact-section">
+
+			<h1>Contact Us</h1>
+			<div id="input-form">
+				<form>
+					<div class="inputs" id="input-name">
+						<label for="name">Your Name</label>
+						<input class="inputs input-hover" id="name" type="text" name="your-name" placeholder="Your Name" required>
+					</div>
+					<div class="inputs" id="input-email">
+						<label for="email">Your Email</label>
+						<input class="inputs input-hover" id="email" type="text" name="your-email" placeholder="Your Email" required>
+					</div>
+					<div class="inputs" id="input-message">
+						<label for="message">Your Message</label>
+						<textarea class="inputs input-hover" id="message" name="your-message" placeholder="Your Message"  required></textarea>
+					</div>
+					<div class="inputs" id="submit-button">
+						<button class="inputs" id="button">Submit</button>
+					</div>
+				</form>
+			</div>
+
+		</section>
+
+<!-- Footer Section -->
+	<!-- A simple footer with copyright info and an id to shrink it for phone use -->
+		<footer id="footer-section">
+			<p>
+				&copy; 2024 - The Wild Life of Dolphins - All rights reserved.
+			</p>
+		</footer>
+		</main>
+	</div>
+</body>
+
+</html>
