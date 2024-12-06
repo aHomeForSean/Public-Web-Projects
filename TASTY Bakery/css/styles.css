@@ -1,0 +1,316 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.5;
+    font-size: 0.93rem;
+    padding: 0px;
+    margin: 0px;
+    background-color: #ffffff;
+}
+/* FONTS */
+h1,h2,h3,h4 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Purple Elements */
+.bg-colored {
+    background-color: rgb(102, 38, 101);
+    color: #ffffff;
+}
+
+/* General Container*/
+
+.container {
+    display: flex;              /* Format all children using Flexbox        */
+    flex-direction: column;        /* Orient the children in a Horizontal Row  */
+    align-items: center;        /* Vertical Alignment                       */
+    justify-content: center;    /* Center the items Horizontally            */
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+    width: 80%;
+}
+
+/* Default ul's have padding and margins, this will remove it*/
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    border-bottom: 3px solid #ffc0cb;
+    padding: 15px 0;
+}
+header a {
+    color: #ffffff; /* White text */
+    text-decoration: none; /* No Underline */
+    text-transform: uppercase; /* Conver to Uppercase */
+    font-size: 1rem; /* 15px font size */
+}
+header li {
+    padding: 0 20px; /* Separates items */
+}
+header h1 {
+    margin: 0;
+    font-weight: normal;
+}
+
+header h1 .highlight,
+header .current a {
+    color: #ffc0cb;
+}
+
+header nav {
+    margin-left: auto; /* Push Element to the Right */
+    margin-right: auto;
+}
+header nav ul {
+    list-style: none; /* Removes the Bullets */
+    display: flex; /* Format the children as Flexbox Elements */
+    flex-direction: row; /* Orients the children in a Horizontal Row */
+    justify-content: center; /* Center the items Horizontally */
+    margin: 0;
+    padding: 0;
+}
+
+nav a:hover {
+    color: #ffc0cb;
+}
+
+/* Showcase Section */
+section#showcase {
+    min-height: 400px; /* Sets the Minimum Height of the Box */
+    background-image: url("../images/bakery-hero-image-1920.jpg");
+    background-size: cover;
+    background-position: center; /* Positions the background to the Center of the block */
+    text-align: center; /* Align the text to the Center */
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+}
+
+section#showcase .showcase-inner {
+    display: block;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+    display: flex;
+    flex-direction: row;
+}
+section#showcase .container {
+    flex-direction: column;
+}
+section#showcase h2 {
+    font-size: 4em;
+    font-weight: normal;
+    text-shadow: 0px 0px 30px #444;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+section#showcase p {
+    font-size: 1.25rem; /* 20px */
+}
+
+/* Newlestter */
+section#newsletter {
+    padding: 15px 0;
+}
+section#newsletter input {
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+section#newsletter form {
+    margin-left: auto; /* Push the Form to the Right */
+    margin-right: auto;
+}
+button.button-1 {
+    height: 38px;
+    background-color: rgb(197, 26, 132);
+    border: none;
+    padding: 0 20px;
+    color: #ffffff;
+}
+
+/* Boxing Time */
+section#boxes {
+    margin-top: 20px;
+}
+section#boxes .box {
+    padding: 10px;
+    text-align: center;
+} 
+section#boxes .box img {
+    width: 90px;
+}
+
+.box .fa-birthday-cake {
+    font-size: 5em;
+    color: rgb(197, 26, 132)
+}
+.box .fa-cookie {
+    font-size: 5em;
+    color: rgb(197, 26, 132)
+}
+.box .fa-ring {
+    font-size: 5em;
+    color: rgb(197, 26, 132)
+}
+
+/* About Page */
+section#content .container {
+    /* this style only applies to the container section inside the section with an id of "content" */
+    align-items: start; /* in flexbox, top = start and bottow = end */
+    text-align: left;
+    margin: 1rem auto;
+}
+
+aside {
+    padding: 0 1rem 1rem 1rem; /* add padding to the column but not on top */
+    margin-left: 0; /* separate the content horizontally */
+}
+
+/* Catering */
+
+#catering-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+section#content .platters {
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: #ffc0cb;
+}
+/* Order Form */
+
+div.order-form.container {
+    background-color: #ffc0cb;
+}
+/* Last and kinda Least - Footer */
+footer {
+    padding: 20px;
+    margin-top: 20px;
+    color: #ffffff;
+    text-align: center;
+    background-color: rgb(197, 26, 132);
+}
+
+/* override the width of the textarea on mobile */
+textarea {
+    max-width: 200px;
+}
+
+@media (min-width: 768px) {
+   /* restore the showcase h1 height */
+    section#showcase h2 {
+        font-size: 6em;
+    }
+    /*restore width based upon textarea 'cols' */
+    textarea {
+        max-width: inherit;
+    }
+    /* tells flex elements toto stack side by side again */
+    .container {
+        flex-direction: row;
+    }
+    /* stops the newsletter from centering */
+    section#newsletter form {
+        margin-right: 0;
+    }
+    /* give the aside some left white space */
+    aside {
+        margin-left: 3rem;
+    }
+}
+/* reset the header container so that our mobile menu can go full width */
+header .container { width: 100%; }
+header .container #branding { width: 80%; }
+
+/* mobile menu needs to go full width, and be aligned center */
+nav {
+    text-align: center;
+    line-height: 70px;
+    width: 100%;
+}
+
+/* menu should be hidden on mobile */
+header nav ul {
+    display: none;
+}
+
+/* make the mobile menu have a bottom border (as they will be arranged vertically) */
+nav ul a {
+    display: block;
+    border-top: 1px solid #EAEAEB;
+    margin: 0;
+}
+
+/* hide the checkbox element that stores the state of the menu */
+#toggle {
+    display: none;
+}
+
+/* if the toggle checkbox is checked, show the menu (ul) */
+#toggle:checked ~ ul {
+    display: block;
+}
+
+/* override the padding that was applied in Lab 06 */
+header li { padding: 0px; }
+
+/* suck up the bottom of the <header> by 15px, so it looks like the menu doesn't have extra margin */
+header nav ul { margin-bottom: -15px; }
+
+/* style the hamburger element */
+nav label {
+    font-size: 26px;
+}
+
+img {
+    width: 50%;
+    height: 50%;
+}
+
+/* set the styles for the non-mobile menu */
+@media only screen and (min-width: 768px) {
+
+    /* make the nav block size automatically rather than 100% */
+    nav { width: auto;  }
+    nav label  { display: none; }
+
+    /* snug the nav bar up to the right edge */
+    header nav { margin-right: 0px; }
+
+    /* make the menu horizontal again */
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* undo the mobile menu styling */
+    nav ul a {
+        border-top: 0px;
+        margin: 0;
+        padding: 0 10px; /* need to have only a bit of padding for small tablets in portrait mode */
+    }
+
+    header nav ul { margin-bottom: 0px; }
+
+    /* expand out the header to almost full width */
+    header .container { width: 95%; }
+    header .container #branding { width: auto; }
+
+}
+
+@media only screen and (min-width: 1000px) {
+    /* add some more padding for links on large tablets/desktop */
+    nav ul a {
+        padding: 0 20px;
+    }
+
+    /* restore the header container width */
+    header .container { width: 80%; }
+}

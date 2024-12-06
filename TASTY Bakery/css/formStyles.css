@@ -1,0 +1,117 @@
+
+.order-form div {
+	padding: 5px 0px;
+}
+
+body {
+	font-family: "Open Sans", sans-serif;
+	background-color: #f4f4f4;
+	padding: 20px;
+}
+
+.order-form.container {
+	width: 90%;
+	max-width: 800px;
+	margin: auto;
+	background-color: #fff;
+	padding: 20px;
+	border: 1px solid black;
+	border-radius: 8px;
+}
+
+.page-title {
+	text-align: center;
+	color: #333;
+	font-size: 1.5rem;
+	margin-bottom: 20px;
+}
+
+.order-form p {
+	text-align: center;
+	color: #666;
+	font-size: 1rem;
+	margin-bottom: 20px;
+}
+
+#get-order { width: 100%;}
+
+.personal-child {
+	margin-bottom: 10px;
+	width: 100%;
+	height: 30px;
+	border-radius: 5px;
+	border-width: 1px;
+	border-color: gray;
+
+}
+
+.personal_parent {
+	color: #000000;
+	font-weight: 600;
+	font-size: 14px;
+	letter-spacing: 0.5px;
+}
+
+
+.order-form h2 {
+	margin: 10px 0;
+}
+
+.item-counts {
+	margin-bottom: 10px;
+	width: 320px;
+	height: 30px;
+	border-radius: 5px;
+	border-width: 1px;
+	border-color: gray;
+}
+#macarons-count {
+	width: 390px;
+}
+#doughnut-count {
+	width: 369px;
+}
+#pie-count {
+	width: 382px;
+}
+#cake-count {
+	width: 363px;
+}
+
+.order-form select {
+	border-radius: 5px;
+	border-width: 1px;
+	border-color: gray;
+}
+#order-instructions {
+	margin-top: 10px;
+	resize: none;
+}
+
+.order-form textarea {
+	width: 100%;
+	border-radius: 5px;
+	border-width: 1px;
+	border-color: gray;
+}
+
+#payment-method {
+	margin-bottom: 10px;
+}
+.radio-check {
+	transform: scale(1);
+}
+
+
+.order-form button {
+	width: 100%;
+	height: 40px;
+	background-color: rgb(17, 124, 17);
+	font-weight: 700;
+	font-size: 17px;
+	padding: 11px;
+	color: white;
+	border-radius: 10px;
+	border: 0px;
+	font-family: math;
+}

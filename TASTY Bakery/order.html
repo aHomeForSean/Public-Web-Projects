@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TASTY, top bakery in Victoria, BC">
+    <meta name="keywords" content="doughnuts, cakes, croissants, macarons, pies">
+    <meta name="author" content="Sean Farrell">
+	<title>Yummy Baked Goods | TASTY Bakery | Order</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/formStyles.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="bg-colored">
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">TASTY</span> Bakery</h1>
+            </div>
+            <nav>
+                <label for="toggle">&#9776;</label>
+                <input type="checkbox" id="toggle">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="recipes.html">Recipes</a></li>
+                    <li><a href="catering.html">Catering</a></li>
+                    <li class="current"><a href="order.html">Order</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="newsletter" class="bg-colored">
+        <div class="container">
+            <label for="enter-email"><h3>Subscribe to Newsletter</h3></label>
+            <form>
+                <input type="email" name="email_address" id="enter-email" placeholder="Enter email..." required>
+                <button type="submit" name="Subscribe" class="button-1">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="content">
+        <div class="order-form container">
+            <main>
+                <h2 class="page-title">Order</h2>
+                <p>Please fill in the form below. Payment is made at time of delivery or pickup.</p>
+
+                <form class="order-form" id="get-order" action="" method="post">
+                    <div class="personal_parent">
+                        <label for="first-name">First Name:</label>
+                        <input class="personal-child" id="first-name" type="text" name="first_name" placeholder="First Name" required>
+                    </div>
+                    <div class="personal_parent">
+                        <label for="last-name">Last Name:</label>
+                        <input class="personal-child" id="last-name" type="text" name="last_name" placeholder="Last Name" required>
+                    </div>
+                    <div class="personal_parent">
+                        <label for="email-address">Email Address:</label>
+                        <input class="personal-child" id="email-address" type="email" name="email_address" placeholder="Email Address" required>
+                    </div>
+                    <div class="personal_parent">
+                        <label for="phone-number">Phone Number:</label>
+                        <input class="personal-child" id="phone-number" type="text" name="phone_number" placeholder="Phone Number" required>
+                    </div>
+                    <div>
+                        <h2>Delivery Details</h2>
+                        <label for="delivery-method">Via</label>
+                        <select id="delivery-method" name="delivery_method">
+                            <option value="curbside-pickup">Curbside Pickup</option>
+                            <option value="pickup-in-store">Pickup In Store</option>
+                            <option value="courier-delivery">Deliver Via Courier ($25 Charge)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <h2>Order Items</h2>
+                        <input class="radio-check" type="checkbox" name="order_item[]" value="Macarons" id="macarons"><label for="macarons">Macarons ($1 each)</label>
+                        <select id="macarons-options" name="macarons_options">
+                            <option value="assorted">Assorted</option>
+                            <option value="strawberry">Strawberry</option>
+                            <option value="lime">Lime</option>
+                            <option value="watermelon">Watermelon</option>
+                        </select>
+                        <input class="item-counts" type="number" id="macarons-count" name="macarons_count" min="0" max="100" placeholder="0">
+
+                        <br>
+
+                        <input class="radio-check" type="checkbox" name="order_item[]" value="Doughnuts" id="doughnuts"><label for="doughnuts">Doughnuts ($2 each)</label>
+                        <select id="doughnuts-options" name="doughnuts_options">
+                            <option value="assorted">Assorted</option>
+                            <option value="boston-cream">Boston Cream</option>
+                            <option value="long-john">Long John</option>
+                            <option value="glazed">Glazed</option>
+                            <option value="plain">Plain</option>
+                        </select>
+                        <input class="item-counts" type="number" id="doughnut-count" name="doughnut_count" min="0" max="100" placeholder="0">
+
+                        <br>
+
+                        <input class="radio-check" type="checkbox" name="order_item[]" value="Croissants" id="croissants"><label for="croissants">Croissants ($2 each)</label>
+                        <select id="croissant-options" name="croissant_option">
+                            <option value="traditional">Traditional</option>
+                            <option value="cubed">Cubed</option>
+                            <option value="strawberry-glazed">Strawberry Glazed</option>
+                            <option value="cruffle">Cruffle (waffle pressed)</option>
+                        </select>
+                        <input class="item-counts" type="number" id="croissant-count" name="croissant_count" min="0" max="100" placeholder="0">
+
+                        <br>
+
+                        <input class="radio-check" type="checkbox" name="order_item[]" value="Pies" id="pies"><label for="pies">Pies ($10 each)</label>
+                        <select id="pie-options" name="pie-options">
+                            <option value="apple">Apple</option>
+                            <option value="peach">Peach</option>
+                            <option value="strawberry-rubarb">Strawberry Rubarb</option>
+                            <option value="pumkin">Pumpkin</option>
+                        </select>
+                        <input class="item-counts" type="number" id="pie-count" name="pie_count" min="0" max="3" placeholder="0">
+
+                        <br>
+
+                        <input class="radio-check" type="checkbox" name="order_item[]" value="8inCakes" id="8in-cakes"><label for="8in-cakes">8" Cakes ($25 each)</label>
+                        <select id="8in-cakes-options" name="8in_cake_options">
+                            <option value="lemon">lemon</option>
+                            <option value="black-forest">Black Forest</option>
+                            <option value="cheese-cake">Cheese Cake</option>
+                            <option value="ice-cream">Ice Cream Cake</option>
+                        </select>
+                        <input class="item-counts" type="number" id="cake-count" name="cake_count" min="0" max="3" placeholder="0">
+
+                    </div>
+                    <div>
+                        <h2>Order Instructions</h2>
+                        <label for="order-instructions" >Please specify any preferences below:</label>
+                        <textarea id="order-instructions" name="order_instructions" placeholder="Enter Comments Here" rows="5" cols="60"></textarea>
+                    </div>
+                    <div id="payment-method">
+                        <h2>Payment Method</h2>
+                        <input class="radio-check" type="radio" id="debit" name="payment_type" value="Debit">
+                        <label for="debit">Debit</label>
+                        <input class="radio-check" type="radio" id="cash" name="payment_type" value="Cash">
+                        <label for="cash">Cash</label>
+                        <input class="radio-check" type="radio" id="visa/mastercard" name="payment_type" value="VISA/MC" checked>
+                        <label for="visa/mastercard">Visa/Mastercard</label>
+                    </div>
+
+                    <div>
+                        <button class="button-1">Place Order Now</button>
+                    </div>
+
+                </form>
+
+            </main>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Copyright &copy; 2022 - Your Website Name Here</p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+<!--Showcase-->
+<!--Newsletter-->
+<!--Boxes-->
+<!--<Footer class=""> </footer>-->
+
+
+</body>
+
+</html>

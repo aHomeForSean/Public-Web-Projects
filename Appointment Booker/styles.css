@@ -1,0 +1,135 @@
+body {
+    font-family: "Doto", Dancing Script, sans-serif;
+    font-size: 0.85em;
+    font-weight: 600;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+}
+h5 {
+    font-family: "Dancing Script", cursive;
+}
+
+/*  SPINNING BORDER CODE BELOW  */
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 3px dashed black;
+
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 10.1em;
+
+    animation: spin-clockwise 10s linear infinite;
+}
+
+
+.spinning-border {
+    position: relative;  /* sets the image relative with a z-index of 1 to facilitate the absolute position of the "border" and have the border sit behind the img */
+    z-index: 1;
+}
+.spinning-circle-border {
+    position: relative;  /* sets the image relative with a z-index of 1 to facilitate the absolute position of the "border" and have the border sit behind the img */
+    z-index: 1;
+}
+.spinning-circle-border::after, .spinning-backlight::before {   /* creates a "dup" of the img space, then moves it to tha same position of the img with absolute, places it behind and increase size with padding*/
+    content: '';                                      /* basically using a full img as a border by hiding the content */
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 10.1em;
+
+    /* I am aware that there was 100% a better method, not sure exactly what it was, but this was more fun */
+    /* This makes the circle rotate between white and black an observed amount of times to mimic the look of a dotted border - this method can also be used for lots of useless color tricks*/
+/*
+    background-image: repeating-conic-gradient(black 1%, white 2%);
+*/
+    background-image: conic-gradient(white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white, black, white, white);
+
+
+    animation: spin-clockwise 10s linear infinite;  /* calls spin animation bellow for a linear movement and infinite loops*/
+    /*
+        background-image: conic-gradient(transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent, transparent, black, transparent);
+    */
+
+}
+
+/* just a blurred color addition to the border. It would be great on a site aimed at "gamers" as they eat that shit up */
+.spinning-backlight::before {
+    filter: blur(1rem);
+    opacity: 0.9;
+
+    background-image: conic-gradient(red, green, yellow, red);
+
+    animation: spin-clockwise 5s linear infinite;
+}
+
+@keyframes spin-clockwise {
+    100% {transform: rotate(360deg);}
+}
+@keyframes spin-counter-clockwise {
+    100% {transform: rotate(-360deg);}
+}
+
+
+/*  HOVER EFFECT  */
+.card {
+    box-shadow: 2px 2px 6px rgba(43, 43, 43, 0.52);
+
+}
+.card:hover img {
+    filter: invert(1);
+}
+
+.card:hover {
+    background-color: black;
+    box-shadow: 5px 5px 9px darkred;
+    color: white;
+    text-shadow: 3px 3px 1px red;
+
+    filter: contrast(80%);
+}
+.card:hover * ~  a.btn.inverted {
+    color: black;
+
+    font-weight: bolder;
+    text-shadow: 2px 2px 1px magenta;
+    background-color: red;
+    border-color: green;
+    box-shadow: 3px 3px 4px darkmagenta;
+
+    filter: brightness(75%);
+}
+card:hover *~ div.spinning-border * ~ ::after {
+    background-image: none;
+     /* background-image: conic -gradient(white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white, white, red, white);
+*/
+}
+
+a.btn.inverted.btn-primary:hover {
+    background-color: green;
+    color: whitesmoke;
+    box-shadow: 7px 7px 7px darkred;
+
+}
+
+
+/*  OFF CANVAS */
+.offcanvas-body {
+    font-family: "Montserrat", sans-serif;
+}
+input#first-last-name {
+    width: 100%;
+}
